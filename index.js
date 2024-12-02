@@ -72,7 +72,7 @@ function displayGuess(guess){
 }
 
 function newGame(){
-    const newGameButton = document.querySelector('#newGame')
+    const newGameButton = document.querySelector('#startGame')
 
     newGameButton.addEventListener('click', (e) => {
         randomNum = Math.floor((Math.random() * 100) + 1)
