@@ -46,8 +46,17 @@ function validateGuess(guess){
 
 function checkGuess(guess){
     // checks the guessed number is correct or not according to that user gets something
-    
+    if(guess === randomNum){
+        displayMessage(`Bravo!! You guessed the number 🥳`)
+        endGame()
+    }
+    else if(guess < randomNum){
+        displayMessage(`You are halfway there ;)`)
+    }
 
+    else if(guess > randomNum){
+        displayMessage(`You got further buddy :(`)
+    }
 }
 
 function displayMessage(message){
