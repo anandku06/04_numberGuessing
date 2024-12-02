@@ -2,7 +2,7 @@ const randomNum = Math.floor((Math.random() * 100) + 1)
 
 const submit = document.querySelector('#subt')
 const userInput = document.querySelector('#guessField')
-const guessSlot = document.querySelector('#guesses')
+const guessSlot = document.querySelector('.guesses')
 const remainGuess = document.querySelector('.lastResult')
 const lowOrHi = document.querySelector('.lowOrHi')
 const startOver = document.querySelector('.resultParas')
@@ -61,14 +61,14 @@ function checkGuess(guess){
 
 function displayMessage(message){
     // displays the message for the user regarding the game info
-    
+    lowOrHi.innerHTML = `<h2>${message}</h2>`
 }
 
 function displayGuess(guess){
     userInput.value = ''
-    guessSlot.innerHTML += `${guess}`
+    guessSlot.innerHTML += `${guess}, `
     numGuess++;
-    remainGuess.innerHTML = `${11 - numGuess}`
+    remainGuess.innerHTML = `${10 - numGuess}`
 }
 
 function newGame(){
@@ -76,5 +76,11 @@ function newGame(){
 }
 
 function endGame(){
-
+    userInput.value = ''
+    userInput.setAttribute('disabled', '') // disables the input to take further input from the user
+    p.classList.add('button')
+    p.innerHTML = `<h2 id = "startGame">Start a New Game</h2>`;
+    startOver.appendChild(p);
+    playGame = false
+    newGame()
 }
