@@ -24,7 +24,24 @@ if(playGame){
 
 function validateGuess(guess){
     // validates the user input; valid input is given or not
-    
+    if(isNaN(guess)){
+        alert('Please enter a valid guess!!')
+    }
+    else if(guess < 1 || guess > 100){
+        alert('Number should be between 1 to 100')
+    }
+    else{
+        prevGuess.push(guess)
+        if(numGuess >= 10){
+            displayGuess(guess)
+            displayMessage(`Game Over!! NO more guesses!!`)
+            endGame()
+        }
+        else{
+            displayGuess(guess)
+            checkGuess(guess)
+        }
+    }
 }
 
 function checkGuess(guess){
