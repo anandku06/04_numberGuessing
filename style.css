@@ -32,6 +32,7 @@ button{
 }
 
 #subt{
+    cursor: pointer;
     background-color: #161616;
     color: #ffffff;
     width: 200px;
