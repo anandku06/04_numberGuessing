@@ -68,7 +68,7 @@ function displayGuess(guess){
     userInput.value = ''
     guessSlot.innerHTML += `${guess}, `
     numGuess++;
-    remainGuess.innerHTML = `${10 - numGuess}`
+    remainGuess.innerHTML = `${11 - numGuess}`
 }
 
 function newGame(){
